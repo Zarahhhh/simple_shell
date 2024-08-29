@@ -69,6 +69,13 @@ typedef struct builtin
 	int (*f)(sh_t *myshell);
 } blt_t;
 
+char *find_command_path(const char *cmd);
+void execute_command(const char *cmd);
+void process_input(char *input);
+
+#define MAX_INPUT_SIZE 1024
+#define MAX_PATH_SIZE 1024
+
 int read_line(sh_t *);
 int split_line(sh_t *);
 int parse_line(sh_t *);
